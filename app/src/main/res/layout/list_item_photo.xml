@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="ItemPhotoBinding">
+
+        <import type="com.example.chintansoni.myapplication.util.BindingUtils"/>
+
+        <variable
+                name="photoItem"
+                type="com.example.chintansoni.myapplication.model.remote.response.PhotoItem"/>
+    </data>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <com.example.chintansoni.myapplication.view.customview.SquareImageView
+                android:id="@+id/iv_list_item_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:photoItem="@{photoItem}"
+                tools:src="@tools:sample/avatars"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/background"
+                android:ellipsize="end"
+                android:padding="16dp"
+                android:singleLine="true"
+                android:text="@{photoItem.title}"
+                android:textColor="@android:color/white"
+                tools:text="@tools:sample/full_names"/>
+    </FrameLayout>
+</layout>
